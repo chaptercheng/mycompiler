@@ -1,0 +1,25 @@
+	typedef struct//结构体定义
+	{
+		int a, b;
+		int c;
+		float oa[3][2][2];//多维数组定义
+		typedef struct
+		{
+			char num;
+			int arr[10][2];
+		}InData;
+	}Data;
+
+int main(int arg1, int* arg2)
+{
+	int B;
+	int A = 2,CC=1;
+	int R=3, rr=1;
+	A = 2*3*(R+rr);
+	B = 2*3*(R + rr)/(R-rr) - 8;   //4
+	printf(B);
+	A=2*3 +B/CC;
+	B = 2*3 + B/CC;
+	CC = 2*3 + B/CC - 7;    //9
+	printf(CC);
+}

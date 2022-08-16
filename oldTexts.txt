@@ -1,0 +1,91 @@
+	typedef struct
+	{
+		int a;
+	}Out;
+int main (int a,int b,float *p)
+{
+	float fl;
+	int f,g;
+	int e,d;int value;
+	int arr[6]={25,6,7,5,3,2};
+	a=3;b=3;e=1;d=1;f=1;g=1;
+	
+	value = a-(a+b)*(e-d)+(a+b)/2;
+	value = a+b+e+d;
+	while(value > 6)
+	{
+		value = value -1;
+		printf(value);
+	}
+	while(value < a)
+	{
+		value = value +1;
+	}
+	if(value > 10)
+	{
+		if(value == 24)
+		{
+			value = 6;
+		}
+		else 
+		{
+			value = 7;
+		}
+	}
+	else
+	{
+		if(value == 6)
+		{
+			value = 9;
+		}
+	}
+	printf(value);
+}	
+float fl;
+	int f,g;
+	int e,d;int value;
+	int arr[6]={25,6,7,5,3,2};
+	a=4+2;
+	arr[f+1];
+	
+int main (int a,int b,float *p)
+{
+	int value;
+	int arr[6]={25,6,7,5,3,2};
+	if(arr[4]>arr[5])
+	{
+		arr[1] = arr[2+1] + a;
+	}
+	printf(arr[1]);
+}	a = (a + b)/ (b - a) +(a * b);
+	b = a + 5 - (a + b);
+	B = 5;
+	A = 2*3*(R+r);
+	B = 2*3*(R + r)/(R-r);
+	
+int main()
+{
+	int A,B,C=1;
+	int R=3, r=1;
+	A=2*3 +B/C;
+	B = 2*3 + B/C;
+	C = 2*3 + B/C;    //6
+	printf(C);
+	A = 2*3*(R+r);
+	B = 2*3*(R + r)/(R-r) - 4;   //8
+	printf(B);
+}
+	A=2*3 +B/CC;
+	B = 2*3 + B/CC;
+	CC = 2*3 + B/CC - 8;    //6
+	printf(CC);
+	
+int main()
+{
+	int A,B = 2,CC=1;
+	int R=3, rr=1;
+
+	A = 2*3*(R+rr);
+	B = 2*3*(R + rr)/(R-rr) - 4;   //8
+	printf(B);
+}

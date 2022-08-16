@@ -1,0 +1,66 @@
+Start   Def #
+Def     FunDef`Def Struct`Def int`main`(`PrmDclr`)`{`FunBdy`} #
+FunDef  Type`iT`(`PrmDclr`)`{`FunBdy`}  #
+Type    int float char bool 【PUSH(TypeStk)】#
+Ptr     * $ 【VARN VARF】#
+Struct  typedef`struct`{`StrcBdy`}`iT`; #
+
+StrcBdy Member`StrcBdy Struct`StrcBdy $ #
+
+Member  CatD`MemD # 
+
+Expr    Expr`Op1`Item  【Send(Op1)】Item  #
+Item    Item`Op2`Fctor 【Send(Op2)】Fctor  #
+Fctor   (`Expr`) iT fT cT nT  【PUSH(SEM)】#
+
+PrmDclr Prm`Prms $  #
+Prm     Type`Ptr`iT 【填写参数声明信息】 #
+Prms    ,`Prm`Prms $  #
+
+FunBdy  VarDefs`FunBdys  #
+
+VarDefs VarD`VarDefs $  #
+VarD    VarDef`;  #
+VarDef  Type`IT`ArrAss`Vars 【变量offSet填写】#
+ArrAss  Array 【iT数组类型填写】Assign #
+Vars    ,`IT`ArrAss`Vars $ #
+Array   [`NT`]`Array【高维数组表信息】 
+		[`NT`]【最低维数组信息】  #
+IT      iT 【PUSH(itVec)】#
+NT      nT (PUSH(AnStk))#
+
+Assign  Ass`RightV 【Quarter(=)】  #
+
+FunBdys ClAs`FunBdys
+		While`FunBdys 
+		If`FunBdys 
+		Retrn`FunBdys
+		Print`FunBdys
+		Struct`FunBdys $  #
+ClAs    iT`Assign`; iT`(`CllBdy`)`; #
+RightV  Expr  #
+
+CllBdy  CllPrm`CllPrms  #
+CllPrms ,`CllPrm`CllPrms $  #
+CllPrm  iT fT sT nT cT  #
+
+While   while`WH`(`Logic`)`DO`{`FunBdy`} 【WE】 #
+Logic   Expr`Cmp`Expr  #
+Ass     = 【PUSH(opStk)】#
+Op1     + - 【PUSH(opStk)】#
+Op2     * / 【PUSH(opStk)】#
+Cmp     > < == != 【PUSH(opStk)】#
+
+If      if`(`Logic`)`IF`{`FunBdy`}`Else 【IE】 #
+Else    else`EL`{`FunBdy`} $  #
+Retrn   return`Expr`;  #
+Print   printf`(`VIT`)`; #
+Scanf   scanf`(`VIT`)`; #
+IF      $ 【IF】#
+EL      $ 【EL】#
+WH      $ 【WH】#
+DO      $ 【DO】#
+CatD    $ #
+VIT     iT #
+##
+( ) { } [ ] + - * / , ; = > < != int float char bool iT fT cT printf if else return while sT nT struct typedef main == #

@@ -1,0 +1,203 @@
+Microsoft (R) Macro Assembler Version 6.11		    12/22/18 00:06:46
+tempfile.asm						     Page 1 - 1
+
+
+ 0000				DATAS SEGMENT
+ 0000  0004 [				i DB 4 DUP(0)
+        00
+       ]
+ 0004  0004 [				len DB 4 DUP(0)
+        00
+       ]
+ 0008  0004 [				t DB 4 DUP(0)
+        00
+       ]
+ 000C  0004 [				j DB 4 DUP(0)
+        00
+       ]
+ 0010  0004 [				s DB 4 DUP(0)
+        00
+       ]
+ 0014 00000005 00000002			a DD 5, 2, 4
+       00000004
+ 0020  0004 [				t0 DB 4 DUP(0)
+        00
+       ]
+ 0024  0004 [				i0 DB 4 DUP(0)
+        00
+       ]
+ 0028  0004 [				t1 DB 4 DUP(0)
+        00
+       ]
+ 002C  0004 [				t2 DB 4 DUP(0)
+        00
+       ]
+ 0030  0004 [				i1 DB 4 DUP(0)
+        00
+       ]
+ 0034  0004 [				t3 DB 4 DUP(0)
+        00
+       ]
+ 0038  0004 [				i2 DB 4 DUP(0)
+        00
+       ]
+ 003C  0004 [				t4 DB 4 DUP(0)
+        00
+       ]
+ 0040  0004 [				t5 DB 4 DUP(0)
+        00
+       ]
+ 0044  0004 [				i3 DB 4 DUP(0)
+        00
+       ]
+ 0048  0004 [				t6 DB 4 DUP(0)
+        00
+       ]
+ 004C  0004 [				t7 DB 4 DUP(0)
+        00
+       ]
+ 0050  0004 [				i4 DB 4 DUP(0)
+        00
+       ]
+ 0054  0004 [				t8 DB 4 DUP(0)
+        00
+       ]
+ 0058				DATAS ENDS
+ 0000				STACKS SEGMENT
+ 0000				STACKS ENDS
+ 0000				CODES SEGMENT
+					ASSUME CS : CODES, DS : DATAS, SS : STACKS
+ 0000				START :
+ 0000  B8 ---- R			MOV AX, DATAS
+ 0003  8E D8				MOV DS, AX
+ 0005  C7 06 0004 R 0003		MOV WORD PTR len, 3
+ 000B  C7 06 0000 R 0000		MOV WORD PTR i, 0
+ 0011  C7 06 000C R 0000		MOV WORD PTR j, 0
+ 0017  A1 000C R			MOV AX, WORD PTR j
+ 001A  BD 0004				MOV BP,4
+ 001D  F7 E5				MUL BP
+ 001F  BE 0014 R			MOV SI, OFFSET a
+ 0022  03 F0				ADD SI, AX
+ 0024  89 36 0024 R			MOV WORD PTR i0, SI
+ 0028  8B 3E 0024 R			MOV DI, WORD PTR i0
+ 002C  8B 1D				MOV BX, [DI]
+ 002E  8B 0E 000C R			MOV CX, WORD PTR j
+ 0032  83 C1 01				ADD CX,1
+ 0035  A3 0020 R			MOV WORD PTR t0, AX
+ 0038  8B C1				MOV AX,CX
+ 003A  BD 0004				MOV BP,4
+ 003D  F7 E5				MUL BP
+ 003F  BE 0014 R			MOV SI, OFFSET a
+ 0042  03 F0				ADD SI, AX
+ 0044  89 36 0030 R			MOV WORD PTR i1, SI
+ 0048  89 0E 0028 R			MOV WORD PTR t1, CX
+ 004C  8B 3E 0030 R			MOV DI, WORD PTR i1
+ 0050  8B 0D				MOV CX, [DI]
+ 0052  8B 16 000C R			MOV DX, WORD PTR j
+ 0056  A3 002C R			MOV WORD PTR t2, AX
+ 0059  8B C2				MOV AX,DX
+ 005B  BD 0004				MOV BP,4
+ 005E  F7 E5				MUL BP
+ 0060  BE 0014 R			MOV SI, OFFSET a
+ 0063  03 F0				ADD SI, AX
+ 0065  89 36 0038 R			MOV WORD PTR i2, SI
+ 0069  89 0E 0010 R			MOV WORD PTR s, CX
+ 006D  89 0C				MOV [SI],CX
+ 006F  8B 0E 000C R			MOV CX, WORD PTR j
+ 0073  83 C1 01				ADD CX,1
+ 0076  A3 0034 R			MOV WORD PTR t3, AX
+ 0079  8B C1				MOV AX,CX
+ 007B  BD 0004				MOV BP,4
+ 007E  F7 E5				MUL BP
+ 0080  BE 0014 R			MOV SI, OFFSET a
+ 0083  03 F0				ADD SI, AX
+ 0085  89 36 0044 R			MOV WORD PTR i3, SI
+ 0089  89 1E 0008 R			MOV WORD PTR t, BX
+ 008D  A3 0040 R			MOV WORD PTR t5, AX
+ 0090				  SEG1:
+ 0090  8B 2E 0000 R			MOV BP, WORD PTR i
+ 0094  2B 2E 0004 R			SUB BP, WORD PTR len
+ 0098  BD 0001				MOV BP, 1
+ 009B  7C 03				JL SEG2
+ 009D  BD 0000				MOV BP, 0
+ 00A0				  SEG2:
+ 00A0  89 2E 0048 R			MOV WORD PTR t6, BP
+ 00A4  83 CD 00				OR BP, 0
+ 00A7  74 3A				JZ SEG3
+ 00A9  A1 0000 R			MOV AX, WORD PTR i
+ 00AC  BD 0004				MOV BP,4
+ 00AF  F7 E5				MUL BP
+ 00B1  BE 0014 R			MOV SI, OFFSET a
+ 00B4  03 F0				ADD SI, AX
+ 00B6  89 36 0050 R			MOV WORD PTR i4, SI
+ 00BA  52				PUSH DX
+ 00BB  50				PUSH AX
+ 00BC  56				PUSH SI
+ 00BD  8A 54 01				MOV DL, BYTE PTR[SI+1]
+ 00C0  80 C2 30				ADD DL,'0'
+ 00C3  B4 02				MOV AH,02H
+ 00C5  CD 21				INT 21H
+ 00C7  8A 14				MOV DL, BYTE PTR[SI]
+ 00C9  80 C2 30				ADD DL,'0'
+ 00CC  B4 02				MOV AH,02H
+ 00CE  CD 21				INT 21H
+ 00D0  5E				POP SI
+ 00D1  58				POP AX
+ 00D2  5A				POP DX
+ 00D3  8B 1E 0000 R			MOV BX, WORD PTR i
+ 00D7  83 C3 01				ADD BX,1
+ 00DA  A3 004C R			MOV WORD PTR t7, AX
+ 00DD  89 1E 0000 R			MOV WORD PTR i, BX
+ 00E1  EB AD				JMP SEG1
+ 00E3				  SEG3:
+ 00E3  B4 4C				MOV AH, 4CH
+ 00E5  CD 21				INT 21H
+ 00E7				CODES ENDS
+					END START
+
+Microsoft (R) Macro Assembler Version 6.11		    12/22/18 00:06:46
+tempfile.asm						     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+CODES  . . . . . . . . . . . . .	16 Bit	 00E7	  Para	  Private 
+DATAS  . . . . . . . . . . . . .	16 Bit	 0058	  Para	  Private 
+STACKS . . . . . . . . . . . . .	16 Bit	 0000	  Para	  Private 
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+SEG1 . . . . . . . . . . . . . .	L Near	 0090	  CODES	
+SEG2 . . . . . . . . . . . . . .	L Near	 00A0	  CODES	
+SEG3 . . . . . . . . . . . . . .	L Near	 00E3	  CODES	
+START  . . . . . . . . . . . . .	L Near	 0000	  CODES	
+a  . . . . . . . . . . . . . . .	DWord	 0014	  DATAS	
+i0 . . . . . . . . . . . . . . .	Byte	 0024	  DATAS	
+i1 . . . . . . . . . . . . . . .	Byte	 0030	  DATAS	
+i2 . . . . . . . . . . . . . . .	Byte	 0038	  DATAS	
+i3 . . . . . . . . . . . . . . .	Byte	 0044	  DATAS	
+i4 . . . . . . . . . . . . . . .	Byte	 0050	  DATAS	
+i  . . . . . . . . . . . . . . .	Byte	 0000	  DATAS	
+j  . . . . . . . . . . . . . . .	Byte	 000C	  DATAS	
+len  . . . . . . . . . . . . . .	Byte	 0004	  DATAS	
+s  . . . . . . . . . . . . . . .	Byte	 0010	  DATAS	
+t0 . . . . . . . . . . . . . . .	Byte	 0020	  DATAS	
+t1 . . . . . . . . . . . . . . .	Byte	 0028	  DATAS	
+t2 . . . . . . . . . . . . . . .	Byte	 002C	  DATAS	
+t3 . . . . . . . . . . . . . . .	Byte	 0034	  DATAS	
+t4 . . . . . . . . . . . . . . .	Byte	 003C	  DATAS	
+t5 . . . . . . . . . . . . . . .	Byte	 0040	  DATAS	
+t6 . . . . . . . . . . . . . . .	Byte	 0048	  DATAS	
+t7 . . . . . . . . . . . . . . .	Byte	 004C	  DATAS	
+t8 . . . . . . . . . . . . . . .	Byte	 0054	  DATAS	
+t  . . . . . . . . . . . . . . .	Byte	 0008	  DATAS	
+
+	   0 Warnings
+	   0 Errors

@@ -1,0 +1,72 @@
+Start   Def #
+Def     FunDef`Def Struct`Def int`Main`(`PrmDclr`)`{`FunBdy`} #
+FunDef  Type`iT`(`PrmDclr`)`{`FunBdy`}  #
+Type    int float char bool #
+Ptr     * $ #
+Struct  Init`typedef`struct`{`StrcBdy`}`DiT`; #
+
+StrcBdy Member`StrcBdy Struct $ #
+
+Member  CatD`VarD #
+
+Expr    Expr`Op1`Item Item  #
+Item    Item`Op2`Fctor Fctor  #
+Fctor   (`Expr`) ViT fT cT nT  #
+
+PrmDclr Prm`Prms $  #
+Prm     Type`Ptr`iT  #
+Prms    ,`Prm`Prms $  #
+
+FunBdy  VarDefs`FunBdys  #
+
+VarDefs VarD`VarDefs $  #
+VarD    VarDef`;  #
+VarDef  Type`DiT`ArrAss`Vars #
+ArrAss  Array`AInit DefAss`Assign #
+Vars    ,`DiT`ArrAss`Vars $ #
+Array   [`DnT`]`Array [`DnT`]  #
+DiT      iT #
+DnT      nT #
+
+Assign  Ass`RightV $  #
+
+FunBdys ClAs`FunBdys 
+		While`FunBdys 
+		If`FunBdys 
+		Retrn`FunBdys
+		Print`FunBdys
+		Struct`FunBdys $  #
+ClAs    ViT`Assign`; iT`(`CllBdy`)`; #
+RightV  Expr  #
+
+CllBdy  CllPrm`CllPrms  #
+CllPrms ,`CllPrm`CllPrms $  #
+CllPrm  iT fT sT nT cT  #
+
+While   while`WH`(`Logic`)`DO`{`FunBdy`}  #
+Logic   Expr`Cmp`Expr  #
+Ass     = #
+Op1     + - #
+Op2     * / #
+Cmp     > < == != #
+
+If      if`(`Logic`)`IF`{`FunBdy`}`Else  #
+Else    else`EL`{`FunBdy`} $  #
+Retrn   return`Expr`;  #
+Print   printf`(`ViT`)`; #
+Scanf   scanf`(`ViT`)`; #
+IF      $  #
+EL      $  #
+WH      $  #
+DO      $  #
+CatD    $  #
+ViT     AiT`AT #
+Init    $  #
+Main    main #
+AInit   =`{`Elem`} $ #
+Elem    nT Elem`,`nT  #
+AT      [`Expr`]`AT $ #
+AiT     iT #
+DefAss  $ #
+##
+( ) { } [ ] + - * / , ; = > < != int float char bool iT fT cT printf if else return while sT nT struct typedef main == #

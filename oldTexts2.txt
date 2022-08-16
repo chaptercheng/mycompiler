@@ -1,0 +1,141 @@
+	typedef struct
+	{
+		int a, b;
+		int c;
+		typedef struct
+		{
+			int num;
+			int arr[10][2];
+		}InData;
+	}Data;
+int main (int a,int b )
+{
+	int num[2][3][5], tst ,value=3.5;
+	char  chr,arrc[2][3];
+	float data=3.14 ,num1[2][2],life=12.45;
+	a = 10;
+	b = 5;
+	value = a + b -(a*b)/5;//定义语句
+	printf(value);
+}#
+#
+	int e,d,f,g;
+	int value = a-(a+b)*(e-d)+(a+b)/2;//定义语句
+	printf(value);
+	int main (int a,int b)
+{
+	int f,g;
+	int e,d;int value;
+	a=3;b=1;e=1;d=1;f=1;g=1;
+	value = a-(a+b)*(e-d)+(a+b)/2;//定义语句
+	printf(value);
+	f=2;
+	g=f;
+}#
+
+
+int main (int x1,float x2)
+{
+	int a,b,f,g;
+	int e,d;int value;
+	a=3;b=1;e=1;d=1;f=1;g=1;
+	value = a-(a+b)*(e-d)+(a+b)/2;//定义语句
+	if(value > 10)
+	{
+		value = value - 9;
+	}
+	else
+	{
+		value = 9;
+	}
+	while(value < a)
+	{
+		value = value +1;
+	}
+	printf(value);
+}#
+		typedef struct
+		{
+			int snum;
+			int sarr[2][4];
+		}InData;
+		
+		int main (int x1,float x2)
+{
+	int a,b,f,g;
+	int e,d;int value;
+	a=3;b=1;e=1;d=1;f=1;g=1;
+	value = a-(a+b)*(e-d)+(a+b)/2;//定义语句
+	if(value > 10)
+	{
+		value = value - 9;
+	}
+	else
+	{
+		value = 9;
+	}
+	while(value < a)
+	{
+		value = value +1;
+	}
+	printf(value);
+}
+
+		typedef struct
+		{
+			int x;
+			int y;
+		}Inner;
+		
+			typedef struct
+	{
+		int a,b,c;
+		float d;
+		int sz[10];
+		typedef struct{
+		int ia;
+		int ib[2][5];
+		}Inn;
+	}Data;
+	
+	if(value > 10)
+	{
+		value = value - 9;
+	}
+	else
+	{
+		value = 9;
+	}
+	while(value < a)
+	{
+		value = value +1;
+	}
+	if(value > 10)
+	{
+		if(value == 24)
+		{
+			value = 6;
+		}
+		else 
+		{
+			value = 7;
+		}
+	}
+	else
+	{
+		if(value == 6)
+		{
+			value = 9;
+		}
+	}
+		typedef struct
+	{
+		int a;
+		int b;
+		int c[2][5];
+		typedef struct{
+			int ia;
+			int ib;
+			int ic[3][3];
+			}Inn;
+	}Out;
